@@ -1,47 +1,23 @@
 import React, { lazy, Suspense } from "react"
-import { Router, Link } from "@reach/router"
-import logo from "./logo.svg"
+import { Router } from "@reach/router"
 import "./App.css"
-const Top = lazy(() => import("./Views/Top/Top"))
-const New = lazy(() => import("./Views/New/New"))
-const Show = lazy(() => import("./Views/Show/Show"))
-const Ask = lazy(() => import("./Views/Ask/Ask"))
-const Jobs = lazy(() => import("./Views/Jobs/Jobs"))
+import Nav from "./components/Nav/Nav"
+import Pager from "./components/Pager/Pager"
+import Page from "./components/Page/Page"
 
 function App() {
   return (
     <div className="App">
-      {/* shell */}
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Top</Link>
-          </li>
-          <li>
-            <Link to="/new">New</Link>
-          </li>
-          <li>
-            <Link to="/show">show</Link>
-          </li>
-          <li>
-            <Link to="/ask">Ask</Link>
-          </li>
-          <li>
-            <Link to="/jobs">Jobs</Link>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
+      <Pager />
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <Router>
-          <Top path="/*" />
-          <New path="/new" />
-          <Show path="/show" />
-          <Ask path="/ask" />
-          <Jobs path="/jobs" />
-          {/* <Top default /> */}
-        </Router>
-      </Suspense>
+      <Router>
+        <Page apiPath="news" lastPage="10" path="/*" />
+        <Page apiPath="newest" lastPage="12" path="/new/*" />
+        <Page apiPath="ask" lastPage="2" path="/ask/*" />
+        <Page apiPath="show" lastPage="2" path="/show/*" />
+        <Page apiPath="jobs" lastPage="1" path="/jobs/*" />
+      </Router>
     </div>
   )
 }
