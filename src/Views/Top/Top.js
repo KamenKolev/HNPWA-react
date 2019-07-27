@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import Item from "../../components/Item/Item"
+import { Link } from "@reach/router"
 
 export default props => {
   let [topPosts, setTopPosts] = useState([])
-  let [currentPage, setCurrentPage] = useState(1)
+  let currentPage = +props["*"] || 1
+
   useEffect(() => {
     async function fetchPosts() {
       let { data } = await axios.get(`/news/${currentPage}.json`)
@@ -15,18 +17,20 @@ export default props => {
         })),
       )
     }
-
     fetchPosts()
   }, [currentPage])
 
   return (
     <>
+      {/* <p>Current page {currentPage}</p> */}
       <section className="items">
         {topPosts.map(post => (
-          <Item {...post} />
+          <Item key={post.id} {...post} />
         ))}
       </section>
-      <button onClick={() => setCurrentPage(currentPage + 1)}>More</button>
+      <Link className="nextPageBtn" to={`/${+currentPage + 1}`}>
+        More
+      </Link>
     </>
   )
 }

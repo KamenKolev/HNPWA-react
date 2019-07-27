@@ -34,11 +34,12 @@ function App() {
 
       <Suspense fallback={<div>Loading...</div>}>
         <Router>
-          <Top path="/" />
-          <New path="/new*" />
-          <Show path="/show*" />
-          <Ask path="/ask*" />
-          <Jobs path="/jobs*" />
+          <Top path="/*" />
+          <New path="/new" />
+          <Show path="/show" />
+          <Ask path="/ask" />
+          <Jobs path="/jobs" />
+          {/* <Top default /> */}
         </Router>
       </Suspense>
     </div>

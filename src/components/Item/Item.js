@@ -13,7 +13,7 @@ export default ({
   domain,
   comments_count,
 }) => (
-  <article class="itemPreview">
+  <article className="itemPreview">
     <div className="left">{index}</div>
     <div className="right">
       <h2>

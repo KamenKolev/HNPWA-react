@@ -1,3 +1,3 @@
 import React from "react"
 
-export default params => {}
+export default params => <div className="">Show page</div>
