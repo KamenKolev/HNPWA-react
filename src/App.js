@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react"
+import React from "react"
 import { Router } from "@reach/router"
 import "./App.css"
 import Nav from "./components/Nav/Nav"
