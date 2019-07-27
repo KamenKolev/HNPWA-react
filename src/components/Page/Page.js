@@ -28,8 +28,8 @@ export default props => {
           <Item key={post.id} {...post} />
         ))}
       </section>
-      {props.lastPage !== currentPage || (
-        <Link className="nextPageBtn" to={`/${+currentPage + 1}`}>
+      {props.lastPage !== currentPage && (
+        <Link className="nextPageBtn" to={`${+currentPage + 1}`}>
           More
         </Link>
       )}
