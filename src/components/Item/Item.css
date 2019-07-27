@@ -1,0 +1,23 @@
+.itemPreview {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  grid-gap: 1rem;
+}
+
+.itemPreview h2 {
+  margin: 0;
+}
+
+.itemPreview .index {
+}
+
+.itemPreview .preview {
+}
+
+.itemPreview .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: lighter;
+}
