@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import Item from "../../components/Item/Item"
 import { Link } from "@reach/router"
+import Item from "../../components/Item/Item"
 
 export default props => {
   let [Posts, setPosts] = useState([])
@@ -28,7 +28,7 @@ export default props => {
           <Item key={post.id} {...post} />
         ))}
       </section>
-      {props.lastPage !== currentPage && (
+      {+props.lastPage !== currentPage && (
         <Link className="nextPageBtn" to={`${+currentPage + 1}`}>
           More
         </Link>

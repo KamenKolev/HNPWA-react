@@ -2,14 +2,12 @@ import React, { lazy, Suspense } from "react"
 import { Router } from "@reach/router"
 import "./App.css"
 import Nav from "./components/Nav/Nav"
-import Pager from "./components/Pager/Pager"
 import Page from "./components/Page/Page"
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Pager />
 
       <Router>
         <Page apiPath="news" lastPage="10" path="/*" />
