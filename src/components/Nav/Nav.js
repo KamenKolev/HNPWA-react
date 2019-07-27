@@ -1,23 +1,24 @@
 import React from "react"
-import { Link } from "@reach/router"
+import NavLink from "../NavLink/NavLink"
+import ExactNavLink from "../ExactNavLink/ExactNavLink"
 
 export default props => (
   <nav>
     <ul>
       <li>
-        <Link to="/">Top</Link>
+        <ExactNavLink to="/">Top</ExactNavLink>
       </li>
       <li>
-        <Link to="/new">New</Link>
+        <NavLink to="/new">New</NavLink>
       </li>
       <li>
-        <Link to="/show">show</Link>
+        <NavLink to="/show">Show</NavLink>
       </li>
       <li>
-        <Link to="/ask">Ask</Link>
+        <NavLink to="/ask">Ask</NavLink>
       </li>
       <li>
-        <Link to="/jobs">Jobs</Link>
+        <NavLink to="/jobs">Jobs</NavLink>
       </li>
     </ul>
   </nav>

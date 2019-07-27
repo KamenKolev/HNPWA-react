@@ -10,7 +10,7 @@ function App() {
       <Nav />
 
       <Router>
-        <Page apiPath="news" lastPage="10" path="/*" />
+        <Page apiPath="news" lastPage="10" path="/top*" />
         <Page apiPath="newest" lastPage="12" path="/new/*" />
         <Page apiPath="ask" lastPage="2" path="/ask/*" />
         <Page apiPath="show" lastPage="2" path="/show/*" />

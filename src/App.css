@@ -16,6 +16,7 @@
 }
 
 .App nav ul {
+  font-size: 125%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -24,11 +25,16 @@
 }
 
 .nextPageBtn {
+  font-size: 125%;
   padding: 0.5rem;
   width: 100%;
   display: inline-flex;
   justify-content: center;
   background-color: white;
-  border: 1px solid gray;
   margin-top: 1rem;
+  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.2);
+}
+
+nav a.active {
+  color: orange;
 }
