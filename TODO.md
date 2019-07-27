@@ -1,0 +1,4 @@
+- [ ] Add routing
+- [ ] Implement all pages
+- [ ] implement PWA functionality
+- [ ] cover everything left [Here](https://github.com/tastejs/hacker-news-pwas)
