@@ -18,13 +18,16 @@ export default ({
     <div className="right">
       <h2>
         <a href={url}>{title}</a>
-        <small> ({domain})</small>
+        {domain && <small> ({domain})</small>}
       </h2>
-      <span>
-        {points} points by{" "}
-        <a href={"https://news.ycombinator.com/user?id=" + user}>{user}</a>{" "}
-        {time_ago} | HIDE | {comments_count} comments
-      </span>
+      {points && <span>{points} points </span>}
+      {user && (
+        <span>
+          by <a href={"https://news.ycombinator.com/user?id=" + user}>{user}</a>
+        </span>
+      )}
+      {time_ago && <span> {time_ago}</span>}
+      {comments_count && <span> | {comments_count} comments </span>}
     </div>
   </article>
 )
