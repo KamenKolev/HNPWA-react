@@ -18,7 +18,7 @@ export default props => {
           index: 1 + index + (currentPage - 1) * 30,
         })),
       )
-      sectionRef.current.scrollIntoView({ behavior: "smooth" })
+      sectionRef.current.scrollIntoView()
     }
     fetchPosts()
   }, [currentPage, props.apiPath])
