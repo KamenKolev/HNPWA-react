@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import axios from "axios"
 import { Link } from "@reach/router"
 import Item from "../../components/Item/Item"
 
 export default props => {
+  const sectionRef = useRef(null)
+  console.log(props)
   let [Posts, setPosts] = useState([])
   let currentPage = +props["*"] || 1
 
@@ -16,6 +18,7 @@ export default props => {
           index: 1 + index + (currentPage - 1) * 30,
         })),
       )
+      sectionRef.current.scrollIntoView({ behavior: "smooth" })
     }
     fetchPosts()
   }, [currentPage, props.apiPath])
@@ -23,7 +26,7 @@ export default props => {
   return (
     <>
       {/* <p>Current page {currentPage}</p> */}
-      <section className="items">
+      <section ref={sectionRef} className="items">
         {Posts.map(post => (
           <Item key={post.id} {...post} />
         ))}
